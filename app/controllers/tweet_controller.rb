@@ -53,6 +53,7 @@ class TweetController < ApplicationController
     end
   end
 
+  # If logged_in? && tweet has content, update the content, redirect to that tweet page. Else: Reload edit form #
   patch '/tweets/:id' do
     if logged_in? && !params[:content].empty?
       @tweet = Tweet.find_by_id(params[:id])
