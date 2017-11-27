@@ -31,6 +31,7 @@ class TweetController < ApplicationController
     end
   end
 
+  # If logged_in, show the tweet by finding the ID. Else: force /login page #
   get '/tweets/:id' do
     if logged_in?
       @tweet = Tweet.find_by(id: params[:id])
