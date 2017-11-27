@@ -65,6 +65,7 @@ class TweetController < ApplicationController
     end
   end
 
+  # Delete tweet if logged_in? and current_user is the author. Otherwise, load tweet page. Else: reload /login #
   delete '/tweets/:id/delete' do
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
