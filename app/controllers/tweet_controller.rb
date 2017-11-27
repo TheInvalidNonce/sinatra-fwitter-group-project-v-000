@@ -1,6 +1,6 @@
 class TweetController < ApplicationController
 
-  # If: logged_in? @user = current_user, load users tweets #
+  # If: logged_in? @user = current_user, load users tweets. Else: redirect /login #
   get '/tweets' do
     if logged_in?
       @user = current_user
