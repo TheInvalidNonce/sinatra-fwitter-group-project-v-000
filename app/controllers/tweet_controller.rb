@@ -11,6 +11,7 @@ class TweetController < ApplicationController
     end
   end
 
+  # New tweet action checks if logged_in?, if true, @user = current_user. Load create tweet form. Else: force /login page #
   get '/tweets/new' do
     if logged_in?
       @user = current_user
