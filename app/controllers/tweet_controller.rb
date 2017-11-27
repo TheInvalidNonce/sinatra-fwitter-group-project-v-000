@@ -41,6 +41,7 @@ class TweetController < ApplicationController
     end
   end
 
+  # If logged_in? and Tweet's user is valid: Find tweet by ID, load edit form. Otherwise load tweets show page if not correct user. Else: /login #
   get '/tweets/:id/edit' do
     if logged_in? && Tweet.find_by_id(params[:id]).user == current_user
       @tweet = Tweet.find_by_id(params[:id])
