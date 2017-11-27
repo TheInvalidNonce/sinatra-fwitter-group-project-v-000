@@ -21,6 +21,7 @@ class TweetController < ApplicationController
     end
   end
 
+  # User must be logged_in && new tweet requires content. If both true: display tweet id page. Else: reload form #
   post '/tweets' do
     if !params[:content].empty? && logged_in?
       @tweet = current_user.tweets.create(content: params[:content])
