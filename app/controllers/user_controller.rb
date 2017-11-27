@@ -47,7 +47,7 @@ class UserController < ApplicationController
     erb :'/users/show'
   end
 
-  # If logged_in?: Logout, redirect to /login. Else redirect to index #
+  # If logged_in?: Logout, redirect to /login. Else redirect to / #
   get '/logout' do
     if logged_in?
       logout!
